@@ -12,8 +12,8 @@ def load_data():
     df['Trade'] = df['Close'] - df['Open']  # Renamed to 'Trade' to avoid overwriting 'Trades'
     
     # Calculate Turnover if 'Trades' column is present
-    if 'Trades' in df.columns:
-        df['Turnover'] = (df['Volume'] * df['Trades']).astype(int)
+    if 'Trade' in df.columns:
+        df['Turnover'] = (df['Volume'] * df['Trade']).astype(int)
     else:
         df['Turnover'] = None  # Set to None or 0 if 'Trades' is not available
 
@@ -24,13 +24,13 @@ def show_dataset_page():
     
     df = load_data()
 
-    st.write("Here is a quick overview of the dataset:")
+    st.subheader(":green[Here is a quick overview of the dataset:]")
     st.write(df.head())
 
-    st.write("**Basic Statistics**")
+    st.subheader(":green[**Basic Statistics**]")
     st.write(df.describe())
     
-    st.write("**Column Information**")
+    st.subheader(":green[**Column Information**]")
     st.write("""
     - `Ticker`: Stock symbol
     - `Date`: Date of the stock data
@@ -45,7 +45,7 @@ def show_dataset_page():
     - `Turnover`: Product of Volume and Trades (if Trades data is available)
     """)
 
-    st.write("**Full Dataset**")
+    st.subheader(":green[**Full Dataset**]")
     st.write(df)
 
 # Call show_dataset_page to display the page in Streamlit

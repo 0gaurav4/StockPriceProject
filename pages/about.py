@@ -1,7 +1,7 @@
 import streamlit as st
 
 def show_about_page():
-    st.title("About This Project")
+    st.title(":blue[About This Project]")
     st.markdown("""
     This dashboard is designed to help users interactively explore stock market data.
     You can filter data by ticker, date, and volume to understand stock performance.
@@ -15,13 +15,16 @@ def show_about_page():
     **Author**: Anu Tiwari
     """)
 
-    st.header("How to Use This App")
+    st.header(":blue[How to Use This App]")
     st.write("""
-    - **Home Page**: Explore recent entries in the dataset, key statistics, and filter data by ticker and date range.
-    - **About Page**: Learn about the dataset and key metrics calculated within this app.
+    - **Main Page**: Navigate to different sections like stock analysis, comparisons, and visualizations.
+- **Home Page**: View and analyze the raw dataset, along with key statistics and column details.
+- **Dashboard Page**: A comprehensive dashboard displaying various interactive visualizations for stock performance.
+- **Dataset Page**: View detailed information about the dataset, including basic statistics, columns, and raw data.
+- **About Page**: Learn about the app's features, its purpose, and how the stock data is processed and analyzed.
     """)
 
-    st.header("Setup Instructions")
+    st.header(":green[Setup Instructions]")
 
     st.subheader("1. Install Requirements")
     st.write("""

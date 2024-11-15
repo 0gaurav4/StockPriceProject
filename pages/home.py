@@ -9,7 +9,7 @@ def load_data():
     df['VWAP'] = (df['Volume'] * (df['High'] + df['Low'] + df['Close']) / 3).cumsum() / df['Volume'].cumsum()
     
     # Calculate Trade (difference between Close and Open prices)
-    df['Trade'] = df['Close'] - df['Open']
+    df['Trades'] = df['Close'] - df['Open']
     
     # Calculate Turnover if 'Trades' column is present
     if 'Trades' in df.columns:
@@ -26,7 +26,7 @@ def show_home_page():
     filter by ticker, date, and volume, and gain insights into the performance 
     of various stocks.
     
-    **Features:**
+    :blue[**Features:**]
     - 15 Interactive Data Visualizations
     - Filter by Ticker, Date, and Volume
     - Overview of key stock metrics
@@ -38,7 +38,15 @@ def show_home_page():
 
     df = load_data()
     st.header("Interactive Data Exploration")
-    st.write("Use the filters below to explore specific data points:")
+    st.write("""
+### :green[What is a ***Ticker***?]
+A **Ticker** is a unique symbol or abbreviation used to represent a publicly traded company or asset on a stock exchange. 
+These symbols are typically made up of a few letters and help investors and traders identify and track the performance of specific stocks.
+For example:
+- **AAPL** represents Apple Inc.
+- **TSLA** represents Tesla, Inc.
+- **GOOGL** represents Alphabet Inc. (Google’s parent company).""")
+    st.subheader(":blue[Use the filters below to explore specific data points:]")
 
     # Interactive filters for exploring specific data
     ticker = st.selectbox("Select Ticker", df['Ticker'].unique())
