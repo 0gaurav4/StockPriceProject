@@ -14,7 +14,8 @@ Setup Instructions
     ```
     Open the URL displayed in the terminal (usually `http://localhost:8501`) to access the app in your browser.
 
-   ![Uploading image.png…]()
+   ![image](https://github.com/user-attachments/assets/dfe4d981-04b6-4258-8378-03c4a5a2efeb)
+
 
 
    ![image](https://github.com/user-attachments/assets/04159216-3716-4266-ab7f-5576096e8185)
