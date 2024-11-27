@@ -213,7 +213,7 @@ def page2(title):
         st.plotly_chart(px.line(turnover_data, x='Date', y='Turnover', color='Ticker', title="Turnover for Selected Stocks"))
 
     else:
-        st.warning("Please select at least one stock to compare.")
+        st.warning("Please select 2 stock to compare.")
 
 
 pages = {'Introduction':home,'Analysing a single stock':page1,'Comparison between Stocks':page2}
