@@ -7,13 +7,6 @@ st.set_page_config(page_title='stock data analysis')
 st.sidebar.header("Stock Data Analysis")
 st.sidebar.image("up.png",width=100)
 
-# @st.cache_data
-import pandas as pd
-
-import pandas as pd
-
-import pandas as pd
-
 def load_data():
     df = pd.read_csv('stocks.csv', parse_dates=['Date'])
     df['Date'] = pd.to_datetime(df['Date'])
@@ -212,8 +205,9 @@ def page2(title):
         turnover_data = filtered_data.groupby(['Ticker', 'Date'])['Turnover'].sum().reset_index()
         st.plotly_chart(px.line(turnover_data, x='Date', y='Turnover', color='Ticker', title="Turnover for Selected Stocks"))
 
+
     else:
-        st.warning("Please select 2 stock to compare.")
+        st.warning("Please select at least one stock to compare.")
 
 
 pages = {'Introduction':home,'Analysing a single stock':page1,'Comparison between Stocks':page2}

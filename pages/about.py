@@ -12,7 +12,7 @@ def show_about_page():
     - Pandas for data manipulation
     - Matplotlib & Seaborn for visualizations
     
-    **Author**: ...
+    **Author**: Anu Tiwari
     """)
 
     st.header(":blue[How to Use This App]")
